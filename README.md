@@ -1,3 +1,4 @@
+[![Build and Unit Test](https://github.com/melton1968/cxx-core-tuple/actions/workflows/build.yaml/badge.svg)](https://github.com/melton1968/cxx-core-tuple/actions/workflows/build.yaml)
 
 # Tuple Operations
 
