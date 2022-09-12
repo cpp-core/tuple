@@ -12,10 +12,10 @@ namespace core::tp {
 
 struct printer
 {
-    printer(std::ostream& os, string const& sep = ",") : m_os(os), m_sep(sep) { }
-    mutable index_t m_index = 0;
+    printer(std::ostream& os, std::string const& sep = ",") : m_os(os), m_sep(sep) { }
+    mutable std::ptrdiff_t m_index = 0;
     std::ostream& m_os;
-    string m_sep;
+    std::string m_sep;
     
     template<typename T>
     void operator()(T const& value) const
@@ -26,7 +26,7 @@ struct printer
 	++m_index;
     }
 
-    void operator()(reals const& values) const
+    void operator()(std::vector<double> const& values) const
     {
 	for (auto x : values)
 	{
@@ -39,7 +39,7 @@ struct printer
 };
 
 template<typename... Ts>
-void print(std::ostream& os, std::tuple<Ts...> const& tup, string const& sep = ",")
+void print(std::ostream& os, std::tuple<Ts...> const& tup, std::string const& sep = ",")
 {
     core::tp::printer p(os, sep);
     core::tp::apply(p, tup);

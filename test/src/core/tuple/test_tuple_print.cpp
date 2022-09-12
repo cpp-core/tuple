@@ -9,7 +9,7 @@ using namespace core;
 
 TEST(TuplePrint, Test0)
 {
-    auto tup = std::make_tuple(1, string("abc"),3.0);
+    auto tup = std::make_tuple(1, std::string("abc"),3.0);
     std::stringstream ss;
     ss << tup;
     EXPECT_EQ(ss.str(), "1,abc,3");
@@ -17,7 +17,7 @@ TEST(TuplePrint, Test0)
 
 TEST(TuplePrint, Test1)
 {
-    auto tup = std::make_tuple(1, string("abc"),3.0);
+    auto tup = std::make_tuple(1, std::string("abc"),3.0);
     std::stringstream ss;
     tp::print(ss, tup);
     EXPECT_EQ(ss.str(), "1,abc,3");
@@ -25,7 +25,7 @@ TEST(TuplePrint, Test1)
 
 TEST(TuplePrint, Test2)
 {
-    auto tup = std::make_tuple(1, string("abc"),3.0);
+    auto tup = std::make_tuple(1, std::string("abc"),3.0);
     std::stringstream ss;
     tp::print(ss, tup, ":");
     EXPECT_EQ(ss.str(), "1:abc:3");
