@@ -36,8 +36,8 @@ find_package(cxx_core_mp)
 #
 message("-- cxx-core-tuple: Configuration: ${CMAKE_CURRENT_SOURCE_DIR}")
 message("-- cxx-core-tuple: Included from: ${CMAKE_SOURCE_DIR}")
-message("-- cxx-core-tuple: CORE_MP_TEST ${CORE_MP_TEST}")
-message("-- cxx-core-tuple: CORE_MP_DOCS ${CORE_MP_DOCS}")
+message("-- cxx-core-tuple: CORE_TUPLE_TEST ${CORE_TUPLE_TEST}")
+message("-- cxx-core-tuple: CORE_TUPLE_DOCS ${CORE_TUPLE_DOCS}")
 message("-- cxx-core-tuple: CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}")
 
 # Compilation
@@ -70,7 +70,7 @@ endif()
 
 # Optionally configure the documentation
 #
-if(CORE_MP_DOCS)
+if(CORE_TUPLE_DOCS)
   add_subdirectory(docs)
 endif()
 
