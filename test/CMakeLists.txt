@@ -13,7 +13,7 @@ set(TESTS
   tuple/from_vector
   tuple/list
   tuple/map
-#  tuple/parse
+  tuple/parse
   tuple/permute
   tuple/permute_array
   tuple/print

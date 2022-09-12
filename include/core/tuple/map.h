@@ -6,7 +6,6 @@
 
 #include <tuple>
 #include <functional>
-#include "core/util/common.h"
 #include "core/mp/meta.h"
 #include "core/tuple/util.h"
 #include "core/tuple/list.h"

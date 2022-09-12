@@ -1,8 +1,8 @@
-// Copyright 2017, 2019 by Mark Melton
+// Copyright 2017, 2019, 2022 by Mark Melton
 //
 
 #include <gtest/gtest.h>
-#include "tuple/remove.h"
+#include "core/tuple/remove.h"
 
 using namespace core;
 

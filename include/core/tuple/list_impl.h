@@ -5,7 +5,6 @@
 #define CORE_TUPLE_LIST_IMPL_H
 
 #include <tuple>
-#include "core/util/common.h"
 
 namespace core::tp {
 namespace impl {

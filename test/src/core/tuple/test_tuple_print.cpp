@@ -1,9 +1,9 @@
-// Copyright 2016, 2019 by Mark Melton. All rights reserved.
+// Copyright 2016, 2019, 2022 by Mark Melton. All rights reserved.
 //
 
 #include <gtest/gtest.h>
 #include <sstream>
-#include "tuple/print.h"
+#include "core/tuple/print.h"
 
 using namespace core;
 

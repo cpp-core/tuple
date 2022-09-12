@@ -1,8 +1,8 @@
-// Copyright 2017, 2019 by Mark Melton
+// Copyright 2017, 2019, 2022 by Mark Melton
 //
 
 #include <gtest/gtest.h>
-#include "tuple/find.h"
+#include "core/tuple/find.h"
 
 using namespace core;
 

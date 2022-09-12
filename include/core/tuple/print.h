@@ -6,7 +6,6 @@
 
 #include <tuple>
 #include <iostream>
-#include "core/util/common.h"
 #include "core/tuple/apply.h"
 
 namespace core::tp {

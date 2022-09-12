@@ -1,9 +1,8 @@
-// Copyright 2017, 2019, 2020 by Mark Melton
+// Copyright 2017, 2019, 2020, 2022 by Mark Melton
 //
 
 #include <gtest/gtest.h>
-#include "tuple/to_vector.h"
-
+#include "core/tuple/to_vector.h"
 #include "core/mp/homogeneous.h"
 
 using namespace core;

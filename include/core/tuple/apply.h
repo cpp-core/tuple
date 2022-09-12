@@ -4,7 +4,6 @@
 #ifndef CORE_TUPLE_APPLY_H
 #define CORE_TUPLE_APPLY_H
 
-#include "core/util/common.h"
 #include "core/mp/meta.h"
 #include "core/tuple/util.h"
 

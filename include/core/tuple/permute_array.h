@@ -5,7 +5,6 @@
 #include <array>
 #include <tuple>
 #include <functional>
-#include "core/util/common.h"
 #include "core/mp/permutation.h"
 
 namespace core::tp

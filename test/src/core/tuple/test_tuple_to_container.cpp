@@ -1,9 +1,8 @@
-// Copyright 2017, 2019, 2020, 2021 by Mark Melton
+// Copyright 2017, 2019, 2020, 2021, 2022 by Mark Melton
 //
 
 #include <gtest/gtest.h>
-#include "tuple/to_container.h"
-
+#include "core/tuple/to_container.h"
 #include "core/mp/homogeneous.h"
 
 using namespace core;
@@ -11,7 +10,7 @@ using namespace core;
 TEST(TupleToArray, SizeT)
 {
     auto tup = std::make_tuple(0u, 1u, 2u, 3u, 4u);
-    auto arr = tp::to_container<uint32s>(tup);
+    auto arr = tp::to_container<std::vector<uint>>(tup);
     EXPECT_EQ(arr.size(), 5);
     EXPECT_EQ(arr[0], 0u);
     EXPECT_EQ(arr[1], 1u);
@@ -23,7 +22,7 @@ TEST(TupleToArray, SizeT)
 TEST(TupleToArray, Float)
 {
     auto tup = std::make_tuple(0.5, 1.5, 2.5);
-    auto arr = tp::to_container<reals>(tup);
+    auto arr = tp::to_container<std::vector<double>>(tup);
     EXPECT_EQ(arr.size(), 3);
     EXPECT_EQ(arr[0], 0.5);
     EXPECT_EQ(arr[1], 1.5);
