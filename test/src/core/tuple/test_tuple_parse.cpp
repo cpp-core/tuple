@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-namespace core {
+namespace core::str {
 
 namespace detail {
 template<class T>
@@ -36,7 +36,7 @@ template<class T, class... Us>
 T lexical_cast(std::string_view s, Us... extra)
 { return detail::lexical_cast_impl<T>::parse(s, extra...); }
 
-}; // core
+}; // core::str
 
 
 #include "core/tuple/parse.h"

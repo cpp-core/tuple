@@ -12,7 +12,7 @@ namespace core::tp {
 template<typename T, std::size_t... Is>
 mp::rename_t<T,std::tuple> parse(const std::vector<std::string_view>& views,
 				 std::index_sequence<Is...>) {
-return { core::lexical_cast<mp::at_ct<Is,T>>(views[Is])... };
+    return { core::str::lexical_cast<mp::at_ct<Is,T>>(views[Is])... };
 }
 
 template<typename T, std::size_t N = mp::size_v<T>>
