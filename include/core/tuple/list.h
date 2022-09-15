@@ -1,7 +1,8 @@
-// Copyright (C) 2017, 2019, 2021 by Mark Melton
+// Copyright (C) 2017, 2019, 2021, 2022 by Mark Melton
 //
 
 #pragma once
+#include <cassert>
 #include "core/tuple/list_impl.h"
 
 namespace core::tp {
