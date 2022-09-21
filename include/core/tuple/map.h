@@ -34,21 +34,6 @@ auto map(F&& function, const Ts&... tuples)
 	});
 }
 
-/// Map **function** on each element of **tuple**.
-///
-/// \return A new tuple with the result of mapping **function** on each element of **tuple**.
-/// \param function The function to invoke on each element of **tuple**.
-/// \param tuple The source tuple.
-/// \tparam F The function type
-/// \tparam T The tuple type.
-// template<typename F, typename T, typename Indices = make_tuple_index<T>>
-// auto map(F&& function, T const& tuple) 
-// {
-//     return mp::invoke_with_pack(Indices{}, [&](auto... Is) {
-// 	    return std::make_tuple(function(std::get<Is>(tuple))...);
-// 	});
-// }
-
 /// Modify *tuples* inplace by invoking *function* sequentially on
 /// each stripe of tuple elements.
 ///
@@ -61,10 +46,16 @@ auto map(F&& function, const Ts&... tuples)
 /// \tparam F The function type.
 /// \tparam Ts The tuple types.
 template<class F, class... Ts, class Indices = make_tuple_index<nth<0,Ts...>>>
-void map_inplace(F&& function, Ts&... tuples) {
+auto map_inplace(F&& function, Ts&... tuples) {
     auto get_element = [&](auto I) { return function(std::get<I>(tuples)...); };
-    mp::invoke_with_pack(Indices{}, [&](auto... Is) {
-	(get_element(Is), ...);
+    using I0 = std::integral_constant<size_t, 0>;
+    constexpr auto void_return = std::is_same_v<decltype(get_element(I0{})), void>;
+    return mp::invoke_with_pack(Indices{}, [&](auto... Is) {
+	if constexpr (void_return) {
+	    (get_element(Is), ...);
+	} else {
+	    return std::make_tuple(get_element(Is)...);
+	}
     });
 }
 
@@ -82,22 +73,6 @@ auto map_nth(Function&& function, size_t n, Tuple& tuple)
     throw std::runtime_error("apply_nth: index out of range");
 }
 
-/// Map/Apply **function** on/to each element of **tuple** possibly
-/// modifying **tuple** inplace.
-///
-/// \return A new tuple with the result of mapping **function** on each element of **tuple**.
-/// \param function The function to invoke on each element of **tuple**.
-/// \param tuple The source tuple.
-/// \tparam F The function type
-/// \tparam T The tuple type.
-template<typename F, typename T, typename Indices = make_tuple_index<T>>
-auto mapply(F&& function, T& tuple) 
-{
-    return mp::invoke_with_pack(Indices{}, [&](auto... Is) {
-	    return std::make_tuple(function(std::get<Is>(tuple))...);
-	});
-}
-
 template<typename F, typename T, typename Indices = make_tuple_index<T>>
 auto map_ref(F&& function, T const& tuple)
 {
@@ -105,11 +80,6 @@ auto map_ref(F&& function, T const& tuple)
 	    return std::forward_as_tuple(function(std::get<Is>(tuple))...);
 	});
 }
-
-
-template<typename F, typename S>
-auto map(std::tuple<> const& tuple, F&&, S)
-{ return std::tuple<>(); }
 
 /// Map **function** sequentially to each element of **tuple** passing along **state**.
 ///
@@ -123,17 +93,11 @@ auto map(std::tuple<> const& tuple, F&&, S)
 template<typename F, typename S, typename... Ts>
 auto map(std::tuple<Ts...> const& tuple, F&& function, S state)
 {
-    state = function(state,car(tuple));
-    return cons(state, map(cdr(tuple), function, state));
+    state = function(state, car(tuple));
+    if constexpr (std::tuple_size_v<std::tuple<Ts...>> == 1)
+	return std::make_tuple(state);
+    else
+	return cons(state, map(cdr(tuple), function, state));
 }
-
-/// Equality comparison for tuples *a* and *b*.
-///
-/// \return True if all the corresponding elements of *a* and *b* compare equal.
-/// \tparam T The type of the first tuple.
-/// \tparam U The type of the second tuple.
-template<typename T, typename U>
-auto compare(T& a, U& b)
-{ return map([](auto const& aelem, auto const& belem) { return aelem == belem; }, a, b); }
 
 }; // tuple

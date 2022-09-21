@@ -13,6 +13,14 @@ TEST(TupleMap, Map)
     EXPECT_EQ(r, std::make_tuple(2.0, 3.0, 4.0));
 }
 
+TEST(TupleMap, MapTwoTuples)
+{
+    auto tup1 = std::make_tuple(1.0, 2.0, 3.0);
+    auto tup2 = std::make_tuple(0.0, 1.0, 2.0);
+    auto r = tp::map([](auto x, auto y) { return x - y; }, tup1, tup2);
+    EXPECT_EQ(r, std::make_tuple(1.0, 1.0, 1.0));
+}
+
 TEST(TupleMap, MapInplace)
 {
     auto tup = std::make_tuple(1.0, 2.0, 3.0);
@@ -22,7 +30,7 @@ TEST(TupleMap, MapInplace)
     EXPECT_EQ(std::get<2>(tup), 4.0);
 }
 
-TEST(TupleMap, MapInplace2)
+TEST(TupleMap, MapInplaceTwoTuples)
 {
     auto tup = std::make_tuple(1.0, 2.0, 3.0);
     auto tup2 = std::make_tuple(4.0, 5.0, 6.0);
@@ -35,6 +43,30 @@ TEST(TupleMap, MapInplace2)
     EXPECT_EQ(std::get<2>(tup2), 8.0);
 }
 
+TEST(TupleMap, MapInplaceAndReturnTuple)
+{
+    auto tup = std::make_tuple(1.0, 2.0, 3.0);
+    auto r = tp::map_inplace([](auto& x) { x += 1; return x; }, tup);
+    EXPECT_EQ(tup, std::make_tuple(2.0, 3.0, 4.0));
+    EXPECT_EQ(r, std::make_tuple(2.0, 3.0, 4.0));
+}
+
+TEST(TupleMap, MapWithStateSum)
+{
+    struct sum { int operator()(int s, int v) const { return s + v; }};
+    auto tup = std::make_tuple(1,2,3,4);
+    auto v1 = tp::map(tup, sum(), 0);
+    EXPECT_EQ(v1, std::make_tuple(1,3,6,10));
+}
+
+TEST(TupleMap, MapWithStateProduct)
+{
+    struct product { int operator()(int s, int v) const { return s * v; }};
+    auto tup = std::make_tuple(1,2,3,4);
+    auto v1 = tp::map(tup, product(), 1);
+    EXPECT_EQ(v1, std::make_tuple(1,2,6,24));
+}
+
 TEST(TupleMap, MapNth)
 {
     auto tup = std::make_tuple(1.0, 2.0, 3.0);
@@ -43,47 +75,6 @@ TEST(TupleMap, MapNth)
     EXPECT_EQ(std::get<0>(tup), 1.0);
     EXPECT_EQ(std::get<1>(tup), 3.0);
     EXPECT_EQ(std::get<2>(tup), 3.0);
-}
-
-
-TEST(TupleMap, Mapply)
-{
-    auto tup = std::make_tuple(1.0, 2.0, 3.0);
-    auto r = tp::mapply([](auto& x) { x += 1; return x; }, tup);
-    EXPECT_EQ(tup, std::make_tuple(2.0, 3.0, 4.0));
-    EXPECT_EQ(r, std::make_tuple(2.0, 3.0, 4.0));
-}
-
-TEST(TupleMap, MapN)
-{
-    auto tup1 = std::make_tuple(1.0, 2.0, 3.0);
-    auto tup2 = std::make_tuple(0.0, 1.0, 2.0);
-    auto r = tp::map([](auto x, auto y) { return x - y; }, tup1, tup2);
-    EXPECT_EQ(r, std::make_tuple(1.0, 1.0, 1.0));
-}
-
-TEST(TupleMap, MapWithState)
-{
-    struct sum { int operator()(int s, int v) const { return s + v; }};
-    auto tup = std::make_tuple(1,2,3,4);
-    auto v1 = tp::map(tup, sum(), 0);
-    EXPECT_EQ(v1, std::make_tuple(1,3,6,10));
-}
-
-TEST(TupleMap, MapWithState2)
-{
-    struct product { int operator()(int s, int v) const { return s * v; }};
-    auto tup = std::make_tuple(1,2,3,4);
-    auto v1 = tp::map(tup, product(), 1);
-    EXPECT_EQ(v1, std::make_tuple(1,2,6,24));
-}
-
-TEST(TupleFold, Compare)
-{
-    auto tup1 = std::make_tuple(1.0, 2.0, 3.0);
-    auto tup2 = std::make_tuple(1.0, 2.0, 4.0);
-    auto r = tp::compare(tup1, tup2);
-    EXPECT_EQ(r, std::make_tuple(true,true,false));
 }
 
 int main(int argc, char *argv[])

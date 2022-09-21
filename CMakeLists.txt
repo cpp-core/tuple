@@ -57,6 +57,9 @@ target_include_directories(cxx_core_tuple
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
+add_executable(core_mp_0 src/core/tools/core_mp_0.cpp)
+target_link_libraries(core_mp_0 cxx_core_tuple cxx_core_mp::cxx_core_mp)
+
 # Optionally configure the tests
 #
 if(CORE_TUPLE_TEST)

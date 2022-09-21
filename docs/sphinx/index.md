@@ -64,5 +64,6 @@ caption: FILE REFERENCE
 maxdepth: 5
 ---
 include/ <generated/include/dir>
+src/ <generated/src/dir>
 test/ <generated/test/dir>
 ```

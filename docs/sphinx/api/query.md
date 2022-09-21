@@ -13,9 +13,6 @@
 ```{doxygenfunction} core::tp::cdr
 ```
 
-```{doxygenfunction} core::tp::compare
-```
-
 ```{doxygenfunction} core::tp::max
 ```
 
