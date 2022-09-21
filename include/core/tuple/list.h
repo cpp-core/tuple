@@ -42,14 +42,20 @@ template<typename T, typename R = typename impl::range<1, std::tuple_size<T>::va
 auto cdr(const T& t)
 { return select(t, R()); }
 
-// cons
-//
+/// Create a new tuple by prepending element *x* to tuple *t*.
+///
+/// \return A new tuple with *x* prepended to *t*.
+/// \tparam X The type of the element to prepend.
+/// \tparam Xs The types in the tuple *t*.
 template<typename X, typename... Xs>
 auto cons(X x, const std::tuple<Xs...>& t)
 { return std::tuple_cat(std::make_tuple(x), t); }
 
-// append
-//
+/// Create a new tuple by appending element *x* to tuple *t*.
+///
+/// \return A new tuple with *x* appended to *t*.
+/// \tparam X The type of the element to append.
+/// \tparam Xs The types in the tuple *t*.
 template<typename X, typename... Xs>
 auto append(const std::tuple<Xs...>& t, X x)
 { return std::tuple_cat(t, std::make_tuple(x)); }
