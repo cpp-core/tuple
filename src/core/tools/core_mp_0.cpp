@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-3int main(int argc, const char *argv[]) {
+int main(int argc, const char *argv[]) {
     auto get_element = [&](int x) { };
     std::cout << std::is_same_v<decltype(get_element(0)), void> << std::endl;
     return 0;
