@@ -6,7 +6,7 @@
 
 #include <tuple>
 #include <iostream>
-#include "core/tuple/apply.h"
+#include "core/tuple/map.h"
 
 namespace core::tp {
 
@@ -38,11 +38,14 @@ struct printer
     }
 };
 
+/// Print each element of the given tuple.
+///
+/// \tparam Ts The types of the tuple elements.
 template<typename... Ts>
 void print(std::ostream& os, std::tuple<Ts...> const& tup, std::string const& sep = ",")
 {
     core::tp::printer p(os, sep);
-    core::tp::apply(p, tup);
+    core::tp::map_inplace(p, tup);
 }
 
 }; // end namespace core::tp
@@ -51,7 +54,7 @@ template<typename... Ts>
 std::ostream& operator<<(std::ostream& os, std::tuple<Ts...> const& tup)
 {
     core::tp::printer p(os);
-    core::tp::apply(p, tup);
+    core::tp::map_inplace(p, tup);
     return os;
 }
 

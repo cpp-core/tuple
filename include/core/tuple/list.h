@@ -13,8 +13,11 @@ namespace core::tp {
 //
 constexpr const std::tuple<> empty;
 
-// nth
-//
+/// The nth tuple element.
+///
+/// \return The nth tuple element.
+/// \tparam T The tuple type.
+/// \tparam I The tuple index to return.
 template<class T, size_t I = 0>
 auto& select_nth(T& tup, size_t idx) {
     if (I == idx)
@@ -24,20 +27,27 @@ auto& select_nth(T& tup, size_t idx) {
     assert(false);
 }
 
-// select
-//
+/// A selection of tuple elements
+///
+/// \return A new tuple containing the tuple elements enumerated by **N**.
+/// \tparam T The tuple type.
+/// \tparam N The tuple indices to return.
 template<typename T, size_t... N>
 auto select(const T& t, impl::sequence<N...>)
 { return std::make_tuple(std::get<N>(t)...); }
 	
-// car
-//
+/// The first tuple element.
+///
+/// \return The first tuple element.
+/// \tparam T The tuple type.
 template<typename T>
 auto car(const T& t)
 { return std::get<0>(t); }
 
-// cdr
-//
+/// All but the first tuple element.
+///
+/// \return A new tuple with all but the first tuple element from the given tuple.
+/// \tparam T The typle type.
 template<typename T, typename R = typename impl::range<1, std::tuple_size<T>::value>::type>
 auto cdr(const T& t)
 { return select(t, R()); }
@@ -60,26 +70,16 @@ template<typename X, typename... Xs>
 auto append(const std::tuple<Xs...>& t, X x)
 { return std::tuple_cat(t, std::make_tuple(x)); }
 
-// reverse
-//
 inline auto reverse(std::tuple<> const& t)
 { return std::tuple<>(); }
 
+/// Reverse the order of the tuple elements.
+///
+/// \return A new tuple with the tuple element in reverse order.
+/// \param t The source tuple.
+/// \tparam Xs The tuple element types.
 template<typename... Xs>
 auto reverse(std::tuple<Xs...> const& t)
 { return append(reverse(cdr(t)), car(t)); }
-
-// rapply
-//
-template<typename OP, typename T>
-auto rapply(std::tuple<> const& t, OP&&, T)
-{ return std::tuple<>(); }
-    
-template<typename OP, typename T, typename... Xs>
-auto rapply(std::tuple<Xs...> const& t, OP&& op, T state)
-{
-    state = op(state,car(t));
-    return cons(state, rapply(cdr(t), op, state));
-}
 
 }; // end ns core::tuple

@@ -41,22 +41,6 @@ TEST(TupleListTest, Test0)
     EXPECT_EQ(v4, std::make_tuple(3,std::string("abc"),1));
 }
 
-TEST(TupleListTest, Test1)
-{
-    struct sum { int operator()(int s, int v) const { return s + v; }};
-    auto tup = std::make_tuple(1,2,3,4);
-    auto v1 = tp::rapply(tup, sum(), 0);
-    EXPECT_EQ(v1, std::make_tuple(1,3,6,10));
-}
-
-TEST(TupleListTest, Test2)
-{
-    struct product { int operator()(int s, int v) const { return s * v; }};
-    auto tup = std::make_tuple(1,2,3,4);
-    auto v1 = tp::rapply(tup, product(), 1);
-    EXPECT_EQ(v1, std::make_tuple(1,2,6,24));
-}
-
 int main(int argc, char *argv[])
 {
     ::testing::InitGoogleTest(&argc, argv);

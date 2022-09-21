@@ -6,8 +6,12 @@
 
 namespace core::tp {
 
-// find_first
-//
+/// Find the first tuple element that satisfies the given *predicate*.
+///
+/// \return The index of the first tuple element that satisfies *predicate*, or -1.
+/// \tparam I The starting tuple index
+/// \tparam Tuple The tuple type.
+/// \tparam Predicate The predicate type.
 template<size_t I = 0, class Tuple, class Predicate>
 std::ptrdiff_t find_first(const Tuple& tup, Predicate predicate)
 {

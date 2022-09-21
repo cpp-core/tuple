@@ -6,8 +6,8 @@ find_package(googletest REQUIRED)
 find_package(Threads REQUIRED)
 
 set(TESTS
-  tuple/apply
   tuple/find
+  tuple/fold
   tuple/from_array
   tuple/from_container
   tuple/from_vector
