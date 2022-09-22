@@ -1,0 +1,32 @@
+
+
+.. _include/core/tuple:
+
+tuple
+=========
+
+.. toctree::
+   :maxdepth: 1
+
+   compare.h
+   find.h
+   fold.h
+   from_array.h
+   from_container.h
+   from_vector.h
+   generate.h
+   list.h
+   list_impl.h
+   map.h
+   math.h
+   parse.h
+   permute.h
+   permute_array.h
+   print.h
+   remove.h
+   scatter.h
+   to_array.h
+   to_container.h
+   to_vector.h
+   tuples.h
+   util.h

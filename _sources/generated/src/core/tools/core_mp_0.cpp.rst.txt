@@ -1,0 +1,19 @@
+
+
+.. _src/core/tools/core_mp_0.cpp:
+
+core_mp_0.cpp
+================================
+
+.. code-block:: cpp
+
+    // Copyright (C) 2022 by Mark Melton
+    //
+    
+    #include <iostream>
+    
+    int main(int argc, const char *argv[]) {
+        auto get_element = [&](int x) { };
+        std::cout << std::is_same_v<decltype(get_element(0)), void> << std::endl;
+        return 0;
+    }

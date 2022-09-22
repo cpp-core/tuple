@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operations &mdash; cxx-core-tuple  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Untilities" href="utility.html" />
+    <link rel="prev" title="Querying" href="query.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> cxx-core-tuple
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API REFERENCE</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="construct.html">Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query.html">Querying</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">Untilities</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">FILE REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../generated/include/dir.html">include/</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/src/dir.html">src/</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/test/dir.html">test/</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cxx-core-tuple</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Operations</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/operate.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="operations">
+<h1>Operations<a class="headerlink" href="#operations" title="Permalink to this heading">¶</a></h1>
+<p>The following functions operate on tuples.</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0Dp0EN4core2tp3mapEDaRR1FDpRK2Ts">
+<span id="_CPPv3I0Dp0EN4core2tp3mapERR1FDpRK2Ts"></span><span id="_CPPv2I0Dp0EN4core2tp3mapERR1FDpRK2Ts"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Ts</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Indices</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">make_tuple_index</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">nth</span></span><span class="p"><span class="pre">&lt;</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0Dp0EN4core2tp3mapEDaRR1FDpRK2Ts" title="core::tp::map::Ts"><span class="n"><span class="pre">Ts</span></span></a><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="map_8h_1aee32e4efb36eab0271aefd596518d176"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">map</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0Dp0EN4core2tp3mapEDaRR1FDpRK2Ts" title="core::tp::map::F"><span class="n"><span class="pre">F</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">function</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0Dp0EN4core2tp3mapEDaRR1FDpRK2Ts" title="core::tp::map::Ts"><span class="n"><span class="pre">Ts</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tuples</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0Dp0EN4core2tp3mapEDaRR1FDpRK2Ts" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Map <strong>function</strong> across each stripe of elements in <em>tuples</em>.</p>
+<p>The given <strong>function</strong> is first invoked across the first element of each tuple, i.e. <code class="docutils literal notranslate"><span class="pre">function(std::get&lt;0&gt;(tuple0),</span> <span class="pre">std::get&lt;0&gt;(tuple1),</span> <span class="pre">...)</span></code> to produce the first element of the new tuple. And, then, on each successive stripe of elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>F</strong> – The function type. </p></li>
+<li><p><strong>Ts</strong> – The tuple types. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new tuple resulting from mapping <strong>function</strong> across each stripe of elements. param function The function to map across the given <strong>tuples</strong>. param tuples The tuples to map across. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I00DpEN4core2tp3mapEDaRKNSt5tupleIDp2TsEERR1F1S">
+<span id="_CPPv3I00DpEN4core2tp3mapERKNSt5tupleIDp2TsEERR1F1S"></span><span id="_CPPv2I00DpEN4core2tp3mapERKNSt5tupleIDp2TsEERR1F1S"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">S</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Ts</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="map_8h_1aca2a260bd96fdd039c07a43183a3264c"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">map</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00DpEN4core2tp3mapEDaRKNSt5tupleIDp2TsEERR1F1S" title="core::tp::map::Ts"><span class="n"><span class="pre">Ts</span></span></a><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tuple</span></span>, <a class="reference internal" href="#_CPPv4I00DpEN4core2tp3mapEDaRKNSt5tupleIDp2TsEERR1F1S" title="core::tp::map::F"><span class="n"><span class="pre">F</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">function</span></span>, <a class="reference internal" href="#_CPPv4I00DpEN4core2tp3mapEDaRKNSt5tupleIDp2TsEERR1F1S" title="core::tp::map::S"><span class="n"><span class="pre">S</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">state</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00DpEN4core2tp3mapEDaRKNSt5tupleIDp2TsEERR1F1S" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Map <strong>function</strong> sequentially to each element of <strong>tuple</strong> passing along <strong>state</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tuple</strong> – The source tuple. </p></li>
+<li><p><strong>function</strong> – The function to apply. </p></li>
+<li><p><strong>state</strong> – The initial state. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>F</strong> – The function type. </p></li>
+<li><p><strong>S</strong> – The state type. </p></li>
+<li><p><strong>Ts.</strong> – The tuple element types. </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new tuple resulting from mapping <strong>function</strong> across each element. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0Dp0EN4core2tp11map_inplaceEDaRR1FDpR2Ts">
+<span id="_CPPv3I0Dp0EN4core2tp11map_inplaceERR1FDpR2Ts"></span><span id="_CPPv2I0Dp0EN4core2tp11map_inplaceERR1FDpR2Ts"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Ts</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Indices</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">make_tuple_index</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">nth</span></span><span class="p"><span class="pre">&lt;</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0Dp0EN4core2tp11map_inplaceEDaRR1FDpR2Ts" title="core::tp::map_inplace::Ts"><span class="n"><span class="pre">Ts</span></span></a><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="map_8h_1ae1b2d5e6e5a9d8cf749c65bbfde5c189"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">map_inplace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0Dp0EN4core2tp11map_inplaceEDaRR1FDpR2Ts" title="core::tp::map_inplace::F"><span class="n"><span class="pre">F</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">function</span></span>, <a class="reference internal" href="#_CPPv4I0Dp0EN4core2tp11map_inplaceEDaRR1FDpR2Ts" title="core::tp::map_inplace::Ts"><span class="n"><span class="pre">Ts</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tuples</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0Dp0EN4core2tp11map_inplaceEDaRR1FDpR2Ts" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Modify <em>tuples</em> inplace by invoking <em>function</em> sequentially on each stripe of tuple elements.</p>
+<p>The given <em>function</em> is first invoked on the first element of each tuple, i.e. <code class="docutils literal notranslate"><span class="pre">function(std::get&lt;0&gt;(tuple0),</span> <span class="pre">std::get&lt;0&gt;(tuple1),</span> <span class="pre">...)</span></code>. And, then on each successive set of elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> – The function to map across the stripes of tuple elements. </p></li>
+<li><p><strong>tuples</strong> – The tuples to modify in place. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>F</strong> – The function type. </p></li>
+<li><p><strong>Ts</strong> – The tuple types. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I000EN4core2tp7map_refEDaRR1FRK1T">
+<span id="_CPPv3I000EN4core2tp7map_refERR1FRK1T"></span><span id="_CPPv2I000EN4core2tp7map_refERR1FRK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Indices</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">make_tuple_index</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I000EN4core2tp7map_refEDaRR1FRK1T" title="core::tp::map_ref::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="map_8h_1a41a88e5a64ad86d3bdfca75b0dec91a1"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">map_ref</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I000EN4core2tp7map_refEDaRR1FRK1T" title="core::tp::map_ref::F"><span class="n"><span class="pre">F</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">function</span></span>, <a class="reference internal" href="#_CPPv4I000EN4core2tp7map_refEDaRR1FRK1T" title="core::tp::map_ref::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tuple</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I000EN4core2tp7map_refEDaRR1FRK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0000EN4core2tp6fold_lEDaRR1F1VRK1T">
+<span id="_CPPv3I0000EN4core2tp6fold_lERR1F1VRK1T"></span><span id="_CPPv2I0000EN4core2tp6fold_lERR1F1VRK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">V</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Indices</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">make_tuple_index</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0000EN4core2tp6fold_lEDaRR1F1VRK1T" title="core::tp::fold_l::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="fold_8h_1afc70805c10538b3aa201ae40afa791bf"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">fold_l</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0000EN4core2tp6fold_lEDaRR1F1VRK1T" title="core::tp::fold_l::F"><span class="n"><span class="pre">F</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">function</span></span>, <a class="reference internal" href="#_CPPv4I0000EN4core2tp6fold_lEDaRR1F1VRK1T" title="core::tp::fold_l::V"><span class="n"><span class="pre">V</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <a class="reference internal" href="#_CPPv4I0000EN4core2tp6fold_lEDaRR1F1VRK1T" title="core::tp::fold_l::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tuple</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0000EN4core2tp6fold_lEDaRR1F1VRK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Left fold <strong>function</strong> over the elements of <strong>tuple</strong> starting with the given initial <strong>value</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> – The function to left fold across the <strong>tuple</strong> elements. </p></li>
+<li><p><strong>value</strong> – The initial value of the fold. </p></li>
+<li><p><strong>tuple</strong> – The source tuple. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>F</strong> – The function type. </p></li>
+<li><p><strong>V</strong> – The initial value type. </p></li>
+<li><p><strong>T</strong> – The tuple type. </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of left folding <strong>function</strong> of the <strong>tuple</strong> elements start with <strong>value</strong>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0000EN4core2tp6fold_rEDaRR1F1VRK1T">
+<span id="_CPPv3I0000EN4core2tp6fold_rERR1F1VRK1T"></span><span id="_CPPv2I0000EN4core2tp6fold_rERR1F1VRK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">V</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Indices</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">make_tuple_index</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0000EN4core2tp6fold_rEDaRR1F1VRK1T" title="core::tp::fold_r::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="fold_8h_1a79919c7dd41e8af32421c83206fd58e3"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">fold_r</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0000EN4core2tp6fold_rEDaRR1F1VRK1T" title="core::tp::fold_r::F"><span class="n"><span class="pre">F</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">function</span></span>, <a class="reference internal" href="#_CPPv4I0000EN4core2tp6fold_rEDaRR1F1VRK1T" title="core::tp::fold_r::V"><span class="n"><span class="pre">V</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <a class="reference internal" href="#_CPPv4I0000EN4core2tp6fold_rEDaRR1F1VRK1T" title="core::tp::fold_r::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tuple</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0000EN4core2tp6fold_rEDaRR1F1VRK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Right fold <strong>function</strong> over the elements of <strong>tuple</strong> starting with the given initial <strong>value</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> – The function to right fold across the <strong>tuple</strong> elements. </p></li>
+<li><p><strong>value</strong> – The initial value of the fold. </p></li>
+<li><p><strong>tuple</strong> – The source tuple. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>F</strong> – The function type. </p></li>
+<li><p><strong>V</strong> – The initial value type. </p></li>
+<li><p><strong>T</strong> – The tuple type. </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of right folding <strong>function</strong> of the <strong>tuple</strong> elements start with <strong>value</strong>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4IDpEN4core2tp7reverseEDaRKNSt5tupleIDp2XsEE">
+<span id="_CPPv3IDpEN4core2tp7reverseERKNSt5tupleIDp2XsEE"></span><span id="_CPPv2IDpEN4core2tp7reverseERKNSt5tupleIDp2XsEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Xs</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="list_8h_1a05d8e19b973adc8f4944bbfeb64a408c"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">reverse</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4IDpEN4core2tp7reverseEDaRKNSt5tupleIDp2XsEE" title="core::tp::reverse::Xs"><span class="n"><span class="pre">Xs</span></span></a><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN4core2tp7reverseEDaRKNSt5tupleIDp2XsEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reverse the order of the tuple elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>t</strong> – The source tuple. </p>
+</dd>
+<dt class="field-even">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Xs</strong> – The tuple element types. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new tuple with the tuple element in reverse order. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN4core2tp5equalEDaR1TR1U">
+<span id="_CPPv3I00EN4core2tp5equalER1TR1U"></span><span id="_CPPv2I00EN4core2tp5equalER1TR1U"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="compare_8h_1aca30fbd48faa125eb45f054f35cd89ad"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">equal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN4core2tp5equalEDaR1TR1U" title="core::tp::equal::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <a class="reference internal" href="#_CPPv4I00EN4core2tp5equalEDaR1TR1U" title="core::tp::equal::U"><span class="n"><span class="pre">U</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00EN4core2tp5equalEDaR1TR1U" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Elementwise equality comparison for tuples <strong>a</strong> and <strong>b</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – The type of the first tuple. </p></li>
+<li><p><strong>U</strong> – The type of the second tuple. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new tuple with the results of comparing each element of <strong>a</strong> and <strong>b</strong>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="query.html" class="btn btn-neutral float-left" title="Querying" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utility.html" class="btn btn-neutral float-right" title="Untilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Mark Melton.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

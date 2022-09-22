@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construction &mdash; cxx-core-tuple  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Querying" href="query.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> cxx-core-tuple
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API REFERENCE</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Construction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#from-other-tuples">From Other Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-containers">From Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-strings">From Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tuple-types">Tuple Types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="query.html">Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operate.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">Untilities</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">FILE REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../generated/include/dir.html">include/</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/src/dir.html">src/</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/test/dir.html">test/</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cxx-core-tuple</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Construction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/construct.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="construction">
+<h1>Construction<a class="headerlink" href="#construction" title="Permalink to this heading">¶</a></h1>
+<section id="from-other-tuples">
+<h2>From Other Tuples<a class="headerlink" href="#from-other-tuples" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0DpEN4core2tp4consEDa1XRKNSt5tupleIDp2XsEE">
+<span id="_CPPv3I0DpEN4core2tp4consE1XRKNSt5tupleIDp2XsEE"></span><span id="_CPPv2I0DpEN4core2tp4consE1XRKNSt5tupleIDp2XsEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">X</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Xs</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="list_8h_1a3fa82bd9cef7a1c77adfe10b2adeacb4"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">cons</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN4core2tp4consEDa1XRKNSt5tupleIDp2XsEE" title="core::tp::cons::X"><span class="n"><span class="pre">X</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0DpEN4core2tp4consEDa1XRKNSt5tupleIDp2XsEE" title="core::tp::cons::Xs"><span class="n"><span class="pre">Xs</span></span></a><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0DpEN4core2tp4consEDa1XRKNSt5tupleIDp2XsEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new tuple by prepending element <em>x</em> to tuple <em>t</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – The type of the element to prepend. </p></li>
+<li><p><strong>Xs</strong> – The types in the tuple <em>t</em>. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new tuple with <em>x</em> prepended to <em>t</em>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0DpEN4core2tp6appendEDaRKNSt5tupleIDp2XsEE1X">
+<span id="_CPPv3I0DpEN4core2tp6appendERKNSt5tupleIDp2XsEE1X"></span><span id="_CPPv2I0DpEN4core2tp6appendERKNSt5tupleIDp2XsEE1X"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">X</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Xs</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="list_8h_1a3ce97f4e92d914565715a1cb4731faec"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">append</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0DpEN4core2tp6appendEDaRKNSt5tupleIDp2XsEE1X" title="core::tp::append::Xs"><span class="n"><span class="pre">Xs</span></span></a><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span>, <a class="reference internal" href="#_CPPv4I0DpEN4core2tp6appendEDaRKNSt5tupleIDp2XsEE1X" title="core::tp::append::X"><span class="n"><span class="pre">X</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0DpEN4core2tp6appendEDaRKNSt5tupleIDp2XsEE1X" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new tuple by appending element <em>x</em> to tuple <em>t</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – The type of the element to append. </p></li>
+<li><p><strong>Xs</strong> – The types in the tuple <em>t</em>. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new tuple with <em>x</em> appended to <em>t</em>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="from-containers">
+<h2>From Containers<a class="headerlink" href="#from-containers" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_NSt6size_tEEN4core2tp10from_arrayEDaRNSt5arrayI1T1NEE">
+<span id="_CPPv3I0_NSt6size_tEEN4core2tp10from_arrayERNSt5arrayI1T1NEE"></span><span id="_CPPv2I0_NSt6size_tEEN4core2tp10from_arrayERNSt5arrayI1T1NEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="from__array_8h_1ada622a32c6a7ee3b0a83a78b511c12dc"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">from_array</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_NSt6size_tEEN4core2tp10from_arrayEDaRNSt5arrayI1T1NEE" title="core::tp::from_array::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_NSt6size_tEEN4core2tp10from_arrayEDaRNSt5arrayI1T1NEE" title="core::tp::from_array::N"><span class="n"><span class="pre">N</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">array</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_NSt6size_tEEN4core2tp10from_arrayEDaRNSt5arrayI1T1NEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new tuple from the given <em>array</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – The array element type. </p></li>
+<li><p><strong>N</strong> – The size of the array. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new tuple with the elements from the given <em>array</em>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_NSt6size_tE0EN4core2tp14from_containerEDaRK1C">
+<span id="_CPPv3I_NSt6size_tE0EN4core2tp14from_containerERK1C"></span><span id="_CPPv2I_NSt6size_tE0EN4core2tp14from_containerERK1C"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">C</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="from__container_8h_1a95fda42a72ae09e4d81e053a3691ba5a"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">from_container</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_NSt6size_tE0EN4core2tp14from_containerEDaRK1C" title="core::tp::from_container::C"><span class="n"><span class="pre">C</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_NSt6size_tE0EN4core2tp14from_containerEDaRK1C" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new tuple from the given container <em>c</em>.</p>
+<p>The template parameter <strong>N</strong> must be supplied by the caller because it cannot, in general, be inferred from the container at compile time. Also, the container <em>C</em> must have an indexing operator[].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> – The size of the container. </p></li>
+<li><p><strong>T</strong> – The container element type. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new tuple with the elements from container <em>c</em>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_NSt6size_tEEN4core2tp11from_vectorEDaRNSt6vectorI1TEE">
+<span id="_CPPv3I0_NSt6size_tEEN4core2tp11from_vectorERNSt6vectorI1TEE"></span><span id="_CPPv2I0_NSt6size_tEEN4core2tp11from_vectorERNSt6vectorI1TEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="from__vector_8h_1a361e8947916937ba7a04f40265fa0b5c"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">from_vector</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_NSt6size_tEEN4core2tp11from_vectorEDaRNSt6vectorI1TEE" title="core::tp::from_vector::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vec</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_NSt6size_tEEN4core2tp11from_vectorEDaRNSt6vectorI1TEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new tuple from the given vector <em>vec</em>.</p>
+<p>The template parameter <strong>N</strong> must be supplied by the caller because it cannot be inferred from the vector at compile time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – The vector element type. </p></li>
+<li><p><strong>N</strong> – The size of the container. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new tuple with the elements from vector <em>vec</em>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="from-strings">
+<h2>From Strings<a class="headerlink" href="#from-strings" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_NSt6size_tEEN4core2tp5parseEN2mp8rename_tI1TNSt5tupleEEERKNSt6vectorINSt11string_viewEEE">
+<span id="_CPPv3I0_NSt6size_tEEN4core2tp5parseERKNSt6vectorINSt11string_viewEEE"></span><span id="_CPPv2I0_NSt6size_tEEN4core2tp5parseERKNSt6vectorINSt11string_viewEEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">mp</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_v</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_NSt6size_tEEN4core2tp5parseEN2mp8rename_tI1TNSt5tupleEEERKNSt6vectorINSt11string_viewEEE" title="core::tp::parse::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="parse_8h_1ad89d4c6dbc13fc1a64e1bbe9a54dde94"></span><span class="n"><span class="pre">mp</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">rename_t</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_NSt6size_tEEN4core2tp5parseEN2mp8rename_tI1TNSt5tupleEEERKNSt6vectorINSt11string_viewEEE" title="core::tp::parse::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">parse</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vec</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_NSt6size_tEEN4core2tp5parseEN2mp8rename_tI1TNSt5tupleEEERKNSt6vectorINSt11string_viewEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new tuple by parsing the given string_view’s according to the type of the coresponding tuple element.</p>
+<p>This function requires the <em>cxx_core_string</em> library to be installed in order to parse the individual elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – The type of tuple to create. </p></li>
+<li><p><strong>N</strong> – The tuple arity. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="tuple-types">
+<h2>Tuple Types<a class="headerlink" href="#tuple-types" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4I0_6size_tEN4core2tp10generate_tE">
+<span id="_CPPv3I0_6size_tEN4core2tp10generate_tE"></span><span id="_CPPv2I0_6size_tEN4core2tp10generate_tE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="generate_8h_1a0683480c21a5f3641b9d3f66d373ac86"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">generate_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">mp</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">rename_t</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">mp</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">generate_t</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_6size_tEN4core2tp10generate_tE" title="core::tp::generate_t::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_6size_tEN4core2tp10generate_tE" title="core::tp::generate_t::N"><span class="n"><span class="pre">N</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4I0_6size_tEN4core2tp10generate_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluates to type <code class="docutils literal notranslate"><span class="pre">std::tuple</span></code> with <strong>N</strong> elements of type <strong>T</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – The type of each typle element. </p></li>
+<li><p><strong>N</strong> – The number of tuple elements. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="query.html" class="btn btn-neutral float-right" title="Querying" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Mark Melton.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

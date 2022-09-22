@@ -1,0 +1,26 @@
+
+
+.. _test/src/core/tuple:
+
+tuple
+=========
+
+.. toctree::
+   :maxdepth: 1
+
+   test_tuple_compare.cpp
+   test_tuple_find.cpp
+   test_tuple_fold.cpp
+   test_tuple_from_array.cpp
+   test_tuple_from_container.cpp
+   test_tuple_from_vector.cpp
+   test_tuple_list.cpp
+   test_tuple_map.cpp
+   test_tuple_parse.cpp
+   test_tuple_permute.cpp
+   test_tuple_permute_array.cpp
+   test_tuple_print.cpp
+   test_tuple_remove.cpp
+   test_tuple_to_array.cpp
+   test_tuple_to_container.cpp
+   test_tuple_to_vector.cpp

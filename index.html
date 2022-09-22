@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cxx-core-tuple &mdash; cxx-core-tuple  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="api/intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> cxx-core-tuple
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/construct.html">Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/query.html">Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/operate.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/utility.html">Untilities</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">FILE REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generated/include/dir.html">include/</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/src/dir.html">src/</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/test/dir.html">test/</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">cxx-core-tuple</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>cxx-core-tuple</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cxx-core-tuple">
+<h1>cxx-core-tuple<a class="headerlink" href="#cxx-core-tuple" title="Permalink to this heading">¶</a></h1>
+<p>Tuples primitives for bridging the gap between compile-time and run-time.</p>
+</section>
+<section id="brief-tour">
+<h1>Brief Tour<a class="headerlink" href="#brief-tour" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;core/tp/tuple.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+</section>
+<section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
+<section id="cxx-depends">
+<h2>cxx-depends<a class="headerlink" href="#cxx-depends" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:melton1968/cxx-depends
+mkdir cxx-depends/build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> cxx-depends/build
+<span class="nv">CC</span><span class="o">=</span>clang-mp-11 <span class="nv">CXX</span><span class="o">=</span>clang++-mp-11 cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$HOME</span>/opt -DCORE_TESTS<span class="o">=</span>ON ..
+make cxx_core_tuple-check  <span class="c1"># Run the tests</span>
+make cxx_core_tuple        <span class="c1"># Do the install</span>
+</pre></div>
+</div>
+<p>To build the documentation (requires doxygen and sphinx-build to be installed):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CC</span><span class="o">=</span>clang-11 <span class="nv">CXX</span><span class="o">=</span>clang++11 cmake -DCORE_DOCS ..
+make cxx_core_tuple_docs <span class="c1"># root of html tree is docs/html/index.html</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="background">
+<h1>Background<a class="headerlink" href="#background" title="Permalink to this heading">¶</a></h1>
+<p><em>cxx-core-tuple</em> is part of the <em>cxx-core</em>* family of C++20 based
+libraries. The <em>cxx-core</em> libraries have two primary goals:</p>
+<ul class="simple">
+<li><p><strong>Ergonomics</strong>. In the spirit of the <code class="docutils literal notranslate"><span class="pre">CppCoreGuideLines</span></code>, cxx-core
+aspires to facilitate writing concise, idiomatic code not by force,
+but by providing a clear path that produces robust, easy to read
+code. Good code should be fun to write.</p></li>
+<li><p><strong>Components</strong>. Modern language platforms provide broad support for
+first-class library components, while C++ has traditionally only
+provided a very minimal standard library. <em>cxx-core</em> aspires to
+provide support for a broad range of libraries that feel like part
+of the language.</p></li>
+</ul>
+</section>
+<section id="appendix">
+<h1>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">API REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/construct.html">Construction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/construct.html#from-other-tuples">From Other Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/construct.html#from-containers">From Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/construct.html#from-strings">From Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/construct.html#tuple-types">Tuple Types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/query.html">Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/operate.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/utility.html">Untilities</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">FILE REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generated/include/dir.html">include/</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/include/core/dir.html">core/</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/include/core/tuple/dir.html">tuple/</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/compare.h.html">compare.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/find.h.html">find.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/fold.h.html">fold.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/from_array.h.html">from_array.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/from_container.h.html">from_container.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/from_vector.h.html">from_vector.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/generate.h.html">generate.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/list.h.html">list.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/list_impl.h.html">list_impl.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/map.h.html">map.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/math.h.html">math.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/parse.h.html">parse.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/permute.h.html">permute.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/permute_array.h.html">permute_array.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/print.h.html">print.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/remove.h.html">remove.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/scatter.h.html">scatter.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/to_array.h.html">to_array.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/to_container.h.html">to_container.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/to_vector.h.html">to_vector.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/tuples.h.html">tuples.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/include/core/tuple/util.h.html">util.h</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generated/src/dir.html">src/</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/src/core/dir.html">core/</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/src/core/tools/dir.html">tools/</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/src/core/tools/core_mp_0.cpp.html">core_mp_0.cpp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generated/test/dir.html">test/</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/test/src/dir.html">src/</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/test/src/core/dir.html">core/</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/test/src/core/tuple/dir.html">tuple/</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_compare.cpp.html">test_tuple_compare.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_find.cpp.html">test_tuple_find.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_fold.cpp.html">test_tuple_fold.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_from_array.cpp.html">test_tuple_from_array.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_from_container.cpp.html">test_tuple_from_container.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_from_vector.cpp.html">test_tuple_from_vector.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_list.cpp.html">test_tuple_list.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_map.cpp.html">test_tuple_map.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_parse.cpp.html">test_tuple_parse.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_permute.cpp.html">test_tuple_permute.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_permute_array.cpp.html">test_tuple_permute_array.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_print.cpp.html">test_tuple_print.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_remove.cpp.html">test_tuple_remove.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_to_array.cpp.html">test_tuple_to_array.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_to_container.cpp.html">test_tuple_to_container.cpp</a></li>
+<li class="toctree-l5"><a class="reference internal" href="generated/test/src/core/tuple/test_tuple_to_vector.cpp.html">test_tuple_to_vector.cpp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api/intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Mark Melton.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
