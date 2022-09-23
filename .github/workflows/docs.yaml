@@ -29,7 +29,7 @@ jobs:
       run: cd build && cmake ../docs
       
     - name: Build documentation
-      run: cd build && make cxx_core_tuple_docs
+      run: cd build && make tuple_docs
 
     - name: Deploy documentation
       uses: JamesIves/github-pages-deploy-action@v4
