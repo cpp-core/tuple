@@ -1,14 +1,14 @@
 cmake_minimum_required (VERSION 3.22 FATAL_ERROR)
-project (cxx-core-tuple VERSION 0.1 LANGUAGES C CXX)
+project (tuple VERSION 0.1 LANGUAGES C CXX)
 
 # Make including this file idempotent
 #
-if(TARGET cxx_core_tuple_docs)
+if(TARGET tuple_docs)
   return()
 endif()
 
-set(TARGET_BASE cxx_core_tuple_docs)
-set(PROJECT_BASE cxx-core-tuple-docs)
+set(TARGET_BASE tuple_docs)
+set(PROJECT_BASE tuple-docs)
 
 find_package(Doxygen REQUIRED)
 
