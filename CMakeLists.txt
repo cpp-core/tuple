@@ -35,8 +35,9 @@ option(TUPLE_DOCS "Generate the docs." OFF)
 
 # Add our dependencies
 #
-include(GNUInstallDirs)
-find_package(mp)
+include(cmake/cpp_core_find_package.cmake)
+cpp_core_find_package(fmt VERSION 9.1.0)
+cpp_core_find_package_local(mp /Users/mmelton/work/cpp-core/mp/.git)
 
 # Output configuration
 #
@@ -58,6 +59,9 @@ add_compile_options(-O)
 add_link_options(-stdlib=libc++)
 
 add_library(tuple INTERFACE)
+
+target_link_libraries(tuple INTERFACE mp::mp)
+
 target_include_directories(tuple
   INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -87,4 +91,4 @@ endif()
 #
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/install_config.cmake)
 install_config(tuple)
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/core/tuple DESTINATION include/core/)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/core/tuple DESTINATION include/core)
