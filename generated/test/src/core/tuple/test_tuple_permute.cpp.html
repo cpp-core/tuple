@@ -16,6 +16,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -96,27 +97,27 @@
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Copyright 2017, 2019, 2022 by Mark Melton</span>
 <span class="c1">//</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;gtest/gtest.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;core/tuple/permute.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;core/mp/list.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;core/mp/constants.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gtest/gtest.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/tuple/permute.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/mp/list.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/mp/constants.h&quot;</span><span class="cp"></span>
 
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">core</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">core</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">TEST</span><span class="p">(</span><span class="n">TuplePermute</span><span class="p">,</span> <span class="n">Test0</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">using</span> <span class="n">L1</span> <span class="o">=</span> <span class="n">mp</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">mp_a</span><span class="p">,</span><span class="n">mp_b</span><span class="p">,</span><span class="n">mp_c</span><span class="o">&gt;</span><span class="p">;</span>
-    <span class="k">using</span> <span class="n">L2</span> <span class="o">=</span> <span class="n">mp</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">mp_c</span><span class="p">,</span><span class="n">mp_b</span><span class="o">&gt;</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">tup</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">);</span>
-    <span class="k">auto</span> <span class="n">r</span> <span class="o">=</span> <span class="n">tp</span><span class="o">::</span><span class="n">permute</span><span class="o">&lt;</span><span class="n">L1</span><span class="p">,</span><span class="n">L2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tup</span><span class="p">);</span>
-    <span class="n">EXPECT_EQ</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">));</span>
-<span class="p">}</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">TuplePermute</span><span class="p">,</span><span class="w"> </span><span class="n">Test0</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">L1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mp</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">mp_a</span><span class="p">,</span><span class="n">mp_b</span><span class="p">,</span><span class="n">mp_c</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">L2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mp</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">mp_c</span><span class="p">,</span><span class="n">mp_b</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">tup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tp</span><span class="o">::</span><span class="n">permute</span><span class="o">&lt;</span><span class="n">L1</span><span class="p">,</span><span class="n">L2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tup</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">EXPECT_EQ</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">InitGoogleTest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nf">RUN_ALL_TESTS</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">InitGoogleTest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">RUN_ALL_TESTS</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

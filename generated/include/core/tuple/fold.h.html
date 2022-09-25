@@ -16,6 +16,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -117,15 +118,15 @@
 <span class="c1">//</span>
 
 <span class="cp">#pragma once</span>
-<span class="cp">#include</span> <span class="cpf">&lt;tuple&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;core/mp/meta.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;core/tuple/util.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;core/tuple/list.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tuple&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/mp/meta.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/tuple/util.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/tuple/list.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">core</span><span class="o">::</span><span class="n">tp</span> <span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">core</span><span class="o">::</span><span class="nn">tp</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">core</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">core</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">/// Left fold **function** over the elements of **tuple** starting with the</span>
 <span class="c1">/// given initial **value**.</span>
@@ -137,14 +138,14 @@
 <span class="c1">/// \tparam F The function type.</span>
 <span class="c1">/// \tparam V The initial value type.</span>
 <span class="c1">/// \tparam T The tuple type.</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">F</span><span class="p">,</span> <span class="k">typename</span> <span class="n">V</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Indices</span> <span class="o">=</span> <span class="n">make_tuple_index</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span>
-<span class="k">auto</span> <span class="n">fold_l</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span> <span class="n">function</span><span class="p">,</span> <span class="n">V</span> <span class="n">value</span><span class="p">,</span> <span class="n">T</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tuple</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">mp</span><span class="o">::</span><span class="n">invoke_with_pack</span><span class="p">(</span><span class="n">Indices</span><span class="p">{},</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span><span class="p">...</span> <span class="n">Is</span><span class="p">)</span> <span class="p">{</span>
-            <span class="p">((</span><span class="n">value</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="n">Is</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">))),...);</span>
-            <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
-        <span class="p">});</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">F</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">V</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_tuple_index</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">fold_l</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">function</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tuple</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mp</span><span class="o">::</span><span class="n">invoke_with_pack</span><span class="p">(</span><span class="n">Indices</span><span class="p">{},</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span><span class="p">...</span><span class="w"> </span><span class="n">Is</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="p">((</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="n">Is</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">))),...);</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">/// Right fold **function** over the elements of **tuple** starting with the</span>
 <span class="c1">/// given initial **value**.</span>
@@ -156,75 +157,75 @@
 <span class="c1">/// \tparam F The function type.</span>
 <span class="c1">/// \tparam V The initial value type.</span>
 <span class="c1">/// \tparam T The tuple type.</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">F</span><span class="p">,</span> <span class="k">typename</span> <span class="n">V</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Indices</span> <span class="o">=</span> <span class="n">make_tuple_index</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span>
-<span class="k">auto</span> <span class="n">fold_r</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span> <span class="n">function</span><span class="p">,</span> <span class="n">V</span> <span class="n">value</span><span class="p">,</span> <span class="n">T</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tuple</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">mp</span><span class="o">::</span><span class="n">invoke_with_pack</span><span class="p">(</span><span class="n">Indices</span><span class="p">{},</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span><span class="p">...</span> <span class="n">Is</span><span class="p">)</span> <span class="p">{</span>
-            <span class="p">((</span><span class="n">value</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="n">Indices</span><span class="o">::</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="n">Is</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">))),...);</span>
-            <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
-        <span class="p">});</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">F</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">V</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_tuple_index</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">fold_r</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">function</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tuple</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mp</span><span class="o">::</span><span class="n">invoke_with_pack</span><span class="p">(</span><span class="n">Indices</span><span class="p">{},</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span><span class="p">...</span><span class="w"> </span><span class="n">Is</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="p">((</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="n">Indices</span><span class="o">::</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="n">Is</span><span class="mi">-1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">))),...);</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">/// The minimum tuple element.</span>
 <span class="c1">///</span>
 <span class="c1">/// \return The minimum tuple element.</span>
 <span class="c1">/// \tparam T The type of the first tuple element.</span>
 <span class="c1">/// \tparam Ts The types of the remaining tuple elements.</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">auto</span> <span class="n">min</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tuple</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">auto</span> <span class="n">r</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nf">fold_l</span><span class="p">([](</span><span class="k">auto</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span> <span class="o">?</span> <span class="nl">a</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span> <span class="p">},</span> <span class="n">r</span><span class="p">,</span> <span class="n">cdr</span><span class="p">(</span><span class="n">tuple</span><span class="p">));</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tuple</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">fold_l</span><span class="p">([](</span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">cdr</span><span class="p">(</span><span class="n">tuple</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">/// The maximum tuple element.</span>
 <span class="c1">///</span>
 <span class="c1">/// \return The maximum tuple element.</span>
 <span class="c1">/// \tparam T The type of the first tuple element.</span>
 <span class="c1">/// \tparam Ts The types of the remaining tuple elements.</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">auto</span> <span class="n">max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tuple</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">auto</span> <span class="n">r</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nf">fold_l</span><span class="p">([](</span><span class="k">auto</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span> <span class="o">?</span> <span class="nl">a</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span> <span class="p">},</span> <span class="n">r</span><span class="p">,</span> <span class="n">cdr</span><span class="p">(</span><span class="n">tuple</span><span class="p">));</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tuple</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">fold_l</span><span class="p">([](</span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">cdr</span><span class="p">(</span><span class="n">tuple</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">/// True if any tuple elements are true; otherwise, false.</span>
 <span class="c1">///</span>
 <span class="c1">/// \return True if any tuple elements are true; otherwise, false.</span>
 <span class="c1">/// \param tuple The source tuple.</span>
 <span class="c1">/// \tparam Ts The types of the tuple elements. Must be bool convertible.</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">auto</span> <span class="n">any</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tuple</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">static_assert</span><span class="p">((</span><span class="n">std</span><span class="o">::</span><span class="n">is_convertible</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">,</span><span class="kt">bool</span><span class="o">&gt;::</span><span class="n">value</span> <span class="o">&amp;&amp;</span> <span class="p">...),</span>
-                  <span class="s">&quot;Tuple elements must be convertible to bool&quot;</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nf">fold_l</span><span class="p">([](</span><span class="k">auto</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="n">or</span> <span class="n">b</span><span class="p">;</span> <span class="p">},</span> <span class="nb">false</span><span class="p">,</span> <span class="n">tuple</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">any</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tuple</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">static_assert</span><span class="p">((</span><span class="n">std</span><span class="o">::</span><span class="n">is_convertible</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">,</span><span class="kt">bool</span><span class="o">&gt;::</span><span class="n">value</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">...),</span><span class="w"></span>
+<span class="w">                  </span><span class="s">&quot;Tuple elements must be convertible to bool&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">fold_l</span><span class="p">([](</span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="n">tuple</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">/// True if all tuple elements are true; otherwise, false.</span>
 <span class="c1">///</span>
 <span class="c1">/// \return True if all tuple elements are true; otherwise, false.</span>
 <span class="c1">/// \param tuple The source tuple.</span>
 <span class="c1">/// \tparam Ts The types of the tuple elements. Must be bool convertible.</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">auto</span> <span class="n">all</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tuple</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">static_assert</span><span class="p">((</span><span class="n">std</span><span class="o">::</span><span class="n">is_convertible</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">,</span><span class="kt">bool</span><span class="o">&gt;::</span><span class="n">value</span> <span class="o">&amp;&amp;</span> <span class="p">...),</span>
-                  <span class="s">&quot;Tuple elements must be convertible to bool&quot;</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nf">fold_l</span><span class="p">([](</span><span class="k">auto</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="n">and</span> <span class="n">b</span><span class="p">;</span> <span class="p">},</span> <span class="nb">true</span><span class="p">,</span> <span class="n">tuple</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">all</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tuple</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">static_assert</span><span class="p">((</span><span class="n">std</span><span class="o">::</span><span class="n">is_convertible</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">,</span><span class="kt">bool</span><span class="o">&gt;::</span><span class="n">value</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">...),</span><span class="w"></span>
+<span class="w">                  </span><span class="s">&quot;Tuple elements must be convertible to bool&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">fold_l</span><span class="p">([](</span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">tuple</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">/// True if none of the tuple elements are true; otherwise, false.</span>
 <span class="c1">///</span>
 <span class="c1">/// \return True if none of the tuple elements are true; otherwise, false.</span>
 <span class="c1">/// \param tuple The source tuple.</span>
 <span class="c1">/// \tparam Ts The types of the tuple elemetns. Must be bool convertible.</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">auto</span> <span class="n">none</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tuple</span><span class="p">)</span>
-<span class="p">{</span> <span class="k">return</span> <span class="n">not</span> <span class="n">any</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span> <span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">none</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tuple</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="nf">any</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
-<span class="p">};</span> <span class="c1">// tuple</span>
+<span class="p">};</span><span class="w"> </span><span class="c1">// tuple</span>
 </pre></div>
 </div>
 </section>

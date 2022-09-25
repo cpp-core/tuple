@@ -16,6 +16,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -118,20 +119,20 @@
 
 <span class="cp">#pragma once</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;tuple&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;core/mp/list.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;core/mp/generate.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tuple&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/mp/list.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/mp/generate.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">core</span><span class="o">::</span><span class="n">tp</span> <span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">core</span><span class="o">::</span><span class="nn">tp</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 <span class="c1">/// Evaluates to type `std::tuple` with **N** elements of type **T**.</span>
 <span class="c1">///</span>
 <span class="c1">/// \tparam T The type of each typle element.</span>
 <span class="c1">/// \tparam N The number of tuple elements.</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">N</span><span class="o">&gt;</span>
-<span class="k">using</span> <span class="n">generate_t</span> <span class="o">=</span> <span class="n">core</span><span class="o">::</span><span class="n">mp</span><span class="o">::</span><span class="n">rename_t</span><span class="o">&lt;</span><span class="n">core</span><span class="o">::</span><span class="n">mp</span><span class="o">::</span><span class="n">generate_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">generate_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">core</span><span class="o">::</span><span class="n">mp</span><span class="o">::</span><span class="n">rename_t</span><span class="o">&lt;</span><span class="n">core</span><span class="o">::</span><span class="n">mp</span><span class="o">::</span><span class="n">generate_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 
-<span class="p">};</span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

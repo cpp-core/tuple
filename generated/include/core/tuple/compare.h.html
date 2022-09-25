@@ -16,6 +16,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -117,25 +118,25 @@
 <span class="c1">//</span>
 
 <span class="cp">#pragma once</span>
-<span class="cp">#include</span> <span class="cpf">&quot;core/tuple/map.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/tuple/map.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">core</span><span class="o">::</span><span class="n">tp</span> <span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">core</span><span class="o">::</span><span class="nn">tp</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 <span class="c1">/// Elementwise equality comparison for tuples **a** and **b**.</span>
 <span class="c1">///</span>
 <span class="c1">/// \return A new tuple with the results of comparing each element of **a** and **b**.</span>
 <span class="c1">/// \tparam T The type of the first tuple.</span>
 <span class="c1">/// \tparam U The type of the second tuple.</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">U</span><span class="o">&gt;</span>
-<span class="k">auto</span> <span class="n">equal</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">U</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple_size_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple_size_v</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;</span><span class="p">,</span>
-                  <span class="s">&quot;Cannot compare tuples of different arity for elementwise equality.&quot;</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nf">map</span><span class="p">([](</span><span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">aelem</span><span class="p">,</span> <span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">belem</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">aelem</span> <span class="o">==</span> <span class="n">belem</span><span class="p">;</span>
-    <span class="p">},</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">U</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">equal</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple_size_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple_size_v</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s">&quot;Cannot compare tuples of different arity for elementwise equality.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">map</span><span class="p">([](</span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">aelem</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">belem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">aelem</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">belem</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="p">};</span> <span class="c1">// core::tp</span>
+<span class="p">};</span><span class="w"> </span><span class="c1">// core::tp</span>
 </pre></div>
 </div>
 </section>
