@@ -50,18 +50,26 @@ function(install_config TARGET)
   install(
     TARGETS ${TARGET} ${target_depends}
     EXPORT ${config_target_name}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    ARCHIVE
+    LIBRARY
+    RUNTIME
+    PUBLIC_HEADER
+    FILE_SET HEADERS
     COMPONENT ${flavor}
     )
   
   export(
-    TARGETS ${TARGET} ${target_depends}
+    TARGETS ${TARGET}
     NAMESPACE ${TARGET}::
     FILE ${config_target_build}
     )
+
+  foreach(DT ${target_depends})
+    export(
+      TARGETS ${DT}
+      APPEND FILE ${config_target_build}
+      )
+  endforeach()
 
   install(
     FILES ${config_build} ${config_version_build}

@@ -3,7 +3,7 @@ project (tuple VERSION 0.1 LANGUAGES C CXX)
 
 # Make including this file idempotent
 #
-if(TARGET tuple)
+if(TARGET tuple OR TARGET tuple::tuple)
   return()
 endif()
 
@@ -36,8 +36,7 @@ option(TUPLE_DOCS "Generate the docs." OFF)
 # Add our dependencies
 #
 include(cmake/cpp_core_find_package.cmake)
-cpp_core_find_package(fmt VERSION 9.1.0)
-cpp_core_find_package_local(mp /Users/mmelton/work/cpp-core/mp/.git)
+cpp_core_find_package(mp)
 
 # Output configuration
 #
@@ -59,13 +58,14 @@ add_compile_options(-O)
 add_link_options(-stdlib=libc++)
 
 add_library(tuple INTERFACE)
+add_library(tuple::tuple ALIAS tuple) # Allow interop between FetchContent and FindPackage.
+
+# Define the header files for this library.
+#
+file(GLOB_RECURSE PUBLIC_INCLUDE_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} include/*.h)
+target_sources(tuple INTERFACE FILE_SET HEADERS BASE_DIRS include FILES ${PUBLIC_INCLUDE_FILES})
 
 target_link_libraries(tuple INTERFACE mp::mp)
-
-target_include_directories(tuple
-  INTERFACE
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
 add_executable(core_mp_0 src/core/tools/core_mp_0.cpp)
 target_link_libraries(core_mp_0 tuple mp::mp)
@@ -74,10 +74,6 @@ target_link_libraries(core_mp_0 tuple mp::mp)
 #
 if(TUPLE_TEST)
   enable_testing()
-  if (NOT TARGET check)
-    add_custom_target(check ${CMAKE_CTEST_COMMAND})
-    add_custom_target(check_detail ${CMAKE_CTEST_COMMAND} -V)
-  endif()
   add_subdirectory(test)
 endif()
 
@@ -91,4 +87,3 @@ endif()
 #
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/install_config.cmake)
 install_config(tuple)
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/core/tuple DESTINATION include/core)
