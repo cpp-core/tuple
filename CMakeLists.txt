@@ -33,11 +33,6 @@ endif()
 option(TUPLE_TEST "Generate the tests." OFF)
 option(TUPLE_DOCS "Generate the docs." OFF)
 
-# Add our dependencies
-#
-include(cmake/cpp_core_find_package.cmake)
-cpp_core_find_package(mp)
-
 # Output configuration
 #
 message("-- tuple: Configuration: ${CMAKE_CURRENT_SOURCE_DIR}")
@@ -46,7 +41,7 @@ message("-- tuple: TUPLE_TEST ${TUPLE_TEST}")
 message("-- tuple: TUPLE_DOCS ${TUPLE_DOCS}")
 message("-- tuple: CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}")
 
-# Compilation
+# Setup compilation before adding dependencies
 #
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -57,6 +52,13 @@ add_compile_options(-stdlib=libc++)
 add_compile_options(-O)
 add_link_options(-stdlib=libc++)
 
+# Add our dependencies
+#
+include(cmake/cpp_core_find_package.cmake)
+cpp_core_find_package(mp)
+
+# Build the library
+#
 add_library(tuple INTERFACE)
 add_library(tuple::tuple ALIAS tuple) # Allow interop between FetchContent and FindPackage.
 
