@@ -12,21 +12,12 @@ Tuples primitives for bridging the gap between compile-time and run-time.
 
 # Installation
 
-## cxx-depends
-
 ```bash
-git clone git@github.com:melton1968/cxx-depends
-mkdir cxx-depends/build && cd cxx-depends/build
-CC=clang-mp-11 CXX=clang++-mp-11 cmake -DCMAKE_INSTALL_PREFIX=$HOME/opt -DCORE_TESTS=ON ..
-make cxx_core_tuple-check  # Run the tests
-make cxx_core_tuple        # Do the install
-```
-
-To build the documentation (requires doxygen and sphinx-build to be installed):
-
-```bash
-CC=clang-11 CXX=clang++11 cmake -DCORE_DOCS ..
-make cxx_core_tuple_docs # root of html tree is docs/html/index.html
+git clone git@github.com:cpp-core/mp
+mkdir mp/build && cd mp/build
+CC=clang-mp-14 CXX=clang++-mp-14 cmake -DCMAKE_INSTALL_PREFIX=$HOME/opt ..
+make -j4 check  # Run the tests
+make install    # Do the install
 ```
 
 # Background
