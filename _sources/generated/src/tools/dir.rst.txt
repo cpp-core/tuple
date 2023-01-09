@@ -1,6 +1,6 @@
 
 
-.. _src/core/tools:
+.. _src/tools:
 
 tools
 =========
@@ -8,4 +8,4 @@ tools
 .. toctree::
    :maxdepth: 1
 
-   core_mp_0.cpp
+   tuple0.cpp

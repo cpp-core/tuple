@@ -1,9 +1,9 @@
 
 
-.. _src/core/tools/core_mp_0.cpp:
+.. _src/tools/tuple0.cpp:
 
-core_mp_0.cpp
-================================
+tuple0.cpp
+========================
 
 .. code-block:: cpp
 

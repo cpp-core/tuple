@@ -8,4 +8,4 @@ src
 .. toctree::
    :maxdepth: 1
 
-   core/ <core/dir>
+   tools/ <tools/dir>
