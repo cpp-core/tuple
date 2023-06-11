@@ -3,7 +3,7 @@ project (tuple VERSION 0.1 LANGUAGES C CXX)
 
 # Make including this file idempotent
 #
-if(TARGET tuple OR TARGET tuple::tuple)
+if(TARGET tuple::tuple)
   return()
 endif()
 
