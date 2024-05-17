@@ -59,7 +59,7 @@ add_link_options(-stdlib=libc++)
 
 # Add our dependencies
 #
-add_mp()
+add_repo(mp)
 
 # Build the library
 #
